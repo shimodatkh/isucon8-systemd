@@ -5,7 +5,7 @@ Description = isucon8 qualifier webapp in go
 WorkingDirectory=/home/isucon/torb/webapp/go
 EnvironmentFile=/home/isucon/torb/webapp/env.sh
 
-ExecStart = /bin/sh -c 'exec /home/isucon/torb/webapp/go/torb > /var/log/torb/app.log 2>&1'
+ExecStart = /bin/sh -c 'exec /home/isucon/torb/webapp/go/torb | /home/isucon/2toolForMeasure/notify_slack -channel notify_app_log'
 
 Restart   = always
 Type      = simple
